@@ -8,17 +8,17 @@ export default function FavouriteListItem() {
         <tbody>
         <tr>
             <td style={tableDataStyle}> 
-                yun
+                yun ๑(◕‿◕)๑
             </td>
         </tr>
         <tr>
             <td style={tableDataStyle}> 
-                pupu
+                pupu ๑(◕‿◕)๑
             </td>
         </tr>
         <tr>
             <td style={tableDataStyle}> 
-                zuha
+                zuha ๑(◕‿◕)๑
             </td>
         </tr>
         </tbody>

@@ -1,8 +1,12 @@
 import tableStyle from "../../styleSheets/tableStyle"
-export default function MusicStatus() {
 
+export default function MusicStatus() {
+    const handleRefresh = function(event) {
+        event.preventDefault();
+     }
     return(
         <>
+        <div>
            <h3>lately, i feel...</h3>
         <table style={tableStyle}>
             <tbody>
@@ -21,13 +25,16 @@ export default function MusicStatus() {
         </table>
 
         <form>
+            
             <label><strong>update your song of the day here!</strong></label>
             <br />
             <input></input>
-            <button>update</button>
+            <button onClick={handleRefresh}>update</button>
             <h4>feeling frisky?</h4>
-            <button>random!</button>
+            <button onClick={handleRefresh}>random!</button>
+            
         </form>
+        </div>
         </>
     )
 }
