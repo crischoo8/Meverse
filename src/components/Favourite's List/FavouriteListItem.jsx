@@ -1,5 +1,5 @@
 export default function FavouriteListItem() {
-    const tableStyle = {
+    const tableDataStyle = {
         "border": "1px solid black",
         "textAlign": "center"
      };
@@ -7,11 +7,20 @@ export default function FavouriteListItem() {
     return(
         <tbody>
         <tr>
-            <td style={tableStyle}> 
+            <td style={tableDataStyle}> 
                 yun
             </td>
         </tr>
-       
+        <tr>
+            <td style={tableDataStyle}> 
+                pupu
+            </td>
+        </tr>
+        <tr>
+            <td style={tableDataStyle}> 
+                zuha
+            </td>
+        </tr>
         </tbody>
     )
-}
+};

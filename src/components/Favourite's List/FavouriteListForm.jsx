@@ -1,17 +1,22 @@
 import FavouriteListItem from "./FavouriteListItem"
-
+import { useState } from "react";
+import tableStyle from "../../styleSheets/tableStyle";
 
 export default function FavouriteListForm() {
-    const tableStyle = {
-        "border": "2px solid black"
-     };
+    const [favourites, setFavourites] = useState([]);
+
+  
+
+     const noRefresh = function(event) {
+        event.preventDefault();
+     }
    return (
     <>
     <form > 
         <label>Add a New Bias!</label>
         <br/>
         <input></input>
-        <button>i choose you!</button>
+        <button onClick={noRefresh}>i choose you!</button>
     </form>
         <table style={tableStyle}>
             <thead>
