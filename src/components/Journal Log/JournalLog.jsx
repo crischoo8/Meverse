@@ -6,6 +6,7 @@ export default function JournalLog() {
         <>
         <div className='componentCard'>
         <form>
+            
             <label className='label'>
                 fearnot's log
             </label>
@@ -13,6 +14,7 @@ export default function JournalLog() {
             <textarea />
             <br/>
             <button>update log!</button>
+            
         </form>
         </div>
         </>

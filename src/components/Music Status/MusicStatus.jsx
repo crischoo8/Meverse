@@ -8,6 +8,7 @@ export default function MusicStatus() {
         <>
         <div className="componentCard">
            <h3 className="label">current bop</h3>
+           <br />
         <table className="table">
             <tbody>
             <tr>
@@ -23,7 +24,7 @@ export default function MusicStatus() {
             </tr>
             </tbody>
         </table>
-
+        <br />
         <form>
             
             <label><strong>update your song of the day here!</strong></label>
