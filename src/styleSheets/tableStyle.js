@@ -1,6 +1,7 @@
 const tableStyle = {
     "border": "2px solid black",
-    "textAlign": "center"
+    "textAlign": "center",
+    "borderRadius": "3%"
  };
 
 

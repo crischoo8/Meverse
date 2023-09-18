@@ -30,8 +30,9 @@ export default function MusicStatus() {
             <br />
             <input></input>
             <button onClick={handleRefresh}>update</button>
-            <h4>feeling frisky?</h4>
-            <button onClick={handleRefresh}>random!</button>
+            <br />
+            <label style={{"fontSize":"24px", "padding": "10px"}}><strong><em>feeling frisky?</em></strong></label>
+            <button onClick={handleRefresh}>random song!</button>
             
         </form>
         </div>
