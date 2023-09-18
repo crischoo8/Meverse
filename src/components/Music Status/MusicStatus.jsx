@@ -1,13 +1,13 @@
 import tableStyle from "../../styleSheets/tableStyle"
-
+import '../../Component Styles/Card.css'
 export default function MusicStatus() {
     const handleRefresh = function(event) {
         event.preventDefault();
      }
     return(
         <>
-        <div>
-           <h3>lately, i feel...</h3>
+        <div className="componentCard">
+           <h3 style={{"margin": "0px 0px 0px 50px", "fontSize": "32px"}}>current bop</h3>
         <table style={tableStyle}>
             <tbody>
             <tr>

@@ -1,0 +1,17 @@
+.title {
+    text-align: center;
+}
+
+.container {
+    display: flex;
+}
+
+.rightCheek {
+    flex: 1;
+    padding: 1rem;
+}
+
+.leftCheek {
+    flex: 1;
+    padding: 1rem;
+}

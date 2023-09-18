@@ -1,7 +1,7 @@
 import FavouriteListItem from "./FavouriteListItem"
 import { useState } from "react";
 import tableStyle from "../../styleSheets/tableStyle";
-
+import '../../Component Styles/Card.css'
 
 export default function FavouriteListForm() {
     const [favourites, setFavourites] = useState([]);
@@ -13,9 +13,9 @@ export default function FavouriteListForm() {
      }
    return (
     <>
-    <div>
+    <div className="componentCard">
     <form > 
-        <label>Add a New Bias!</label>
+        <label className='label'>Add a New Bias!</label>
         <br/>
         <input></input>
         <button onClick={handleRefresh}>i choose you!</button>

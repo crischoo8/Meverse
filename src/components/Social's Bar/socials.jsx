@@ -4,7 +4,7 @@ export default function Socials() {
     
     return (
        <>
-       <div className='socials'> 
+       <div className='Socials'> 
         <h3>Socials</h3>
         <img src="https://img.freepik.com/premium-vector/new-logo-twitter-2023-vector-elon-musk_982229-557.jpg" width="70px" height="auto"/>
         <img src="https://img.freepik.com/premium-vector/instagram-app-icon-social-media-logo-vector-illustration_277909-403.jpg?w=2000" width="70px" height="auto"/>
