@@ -1,9 +1,14 @@
-.title {
+body {
     text-align: center;
 }
 
+/* .title {
+    text-align: center;
+} */
+
 .container {
     display: flex;
+    
 }
 
 .rightCheek {
@@ -14,4 +19,5 @@
 .leftCheek {
     flex: 1;
     padding: 1rem;
+    
 }

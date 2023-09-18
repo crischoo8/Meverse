@@ -1,4 +1,4 @@
-import tableStyle from "../../styleSheets/tableStyle"
+
 import '../../Component Styles/Card.css'
 export default function MusicStatus() {
     const handleRefresh = function(event) {
@@ -7,8 +7,8 @@ export default function MusicStatus() {
     return(
         <>
         <div className="componentCard">
-           <h3 style={{"margin": "0px 0px 0px 50px", "fontSize": "32px"}}>current bop</h3>
-        <table style={tableStyle}>
+           <h3 className="label">current bop</h3>
+        <table className="table">
             <tbody>
             <tr>
                 <td>

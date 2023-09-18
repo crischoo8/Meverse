@@ -6,7 +6,7 @@ import './HomePage.css'
 export default function HomePage() {
     return (
         <>
-        <h1 className="title">welcome home ( ˘▽˘)っ♨</h1>
+        <h1 className="title">welcome home (づ ◕‿◕ )づ</h1>
         <br />
         <section className='container'>
         <div className='leftCheek'>

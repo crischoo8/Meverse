@@ -20,7 +20,7 @@ export default function FavouriteListForm() {
         <input></input>
         <button onClick={handleRefresh}>i choose you!</button>
     </form>
-        <table style={tableStyle}>
+        <table className="table">
             <thead>
             <tr>
                 <th>Favourite's List</th>

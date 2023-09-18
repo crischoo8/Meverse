@@ -1,10 +1,22 @@
 .componentCard{
     margin: 100px;
-   
 }
 
 .label {
-    margin: 0px 0px 0px 18px;
+    margin: 0 auto;
     font-size: 28px;
     font-weight: bold;
+}
+
+.table {
+    margin: 0 auto; 
+    border: 2px solid black;
+    text-align: center;
+    border-radius: 3%;
+}
+
+.tableData {
+    border: 1px solid black;
+    text-align: center;
+    border-radius: 10%;
 }

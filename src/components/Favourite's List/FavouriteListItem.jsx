@@ -1,24 +1,22 @@
+import '../../Component Styles/Card.css'
+
 export default function FavouriteListItem() {
-    const tableDataStyle = {
-        "border": "1px solid black",
-        "textAlign": "center"
-     };
 
     return(
         <tbody>
         <tr>
-            <td style={tableDataStyle}> 
+            <td className='tableData'> 
                 yun ๑(◕‿◕)๑
             </td>
         </tr>
         <tr>
-            <td style={tableDataStyle}> 
-                pupu ๑(◕‿◕)๑
+            <td className='tableData'> 
+                pupu Ⴚტ◕‿◕ტჂ
             </td>
         </tr>
         <tr>
-            <td style={tableDataStyle}> 
-                zuha ๑(◕‿◕)๑
+            <td className='tableData'> 
+                zuha (´• ω •`) ♡
             </td>
         </tr>
         </tbody>
