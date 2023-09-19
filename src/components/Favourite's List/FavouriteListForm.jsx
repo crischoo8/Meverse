@@ -12,7 +12,6 @@ export default function FavouriteListForm() {
     const [name, setName] = useState('');
     const [favourites, setFavourites] = useState([]);
    
-useEffect()
   
      const handleChange = function(event) {
         // const {value} = event.target;
@@ -24,26 +23,49 @@ useEffect()
         console.log(name);
         event.preventDefault();
         
+        const data = {
+        "fields": {
+            "Name": `${name}`
+        }
+            };
 
-    const data = {
-      "fields": {
-        "Name": `${name}`
-      }
-  };
-    const response = await fetch(
-      `https://api.airtable.com/v0/${baseId}/${tableName}`,
-      {
-        method: "POST",
-        headers: {
-          Authorization: `Bearer ${apiKey}`,
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      }
-    );
-     await response.json();
-  };
+        const response = await fetch(
+        `https://api.airtable.com/v0/${baseId}/${tableName}`,
+        {
+            method: "POST",
+            headers: {
+            Authorization: `Bearer ${apiKey}`,
+            "Content-Type": "application/json",
+            },
+            body: JSON.stringify(data),
+        }
+        );
+        await response.json();
+    };
         
+    useEffect( () => {
+        const fetchFavs = async () => {
+            const response = await fetch(
+                `https://api.airtable.com/v0/${baseId}/${tableName}`,
+                {
+                    headers: {
+                    Authorization: `Bearer ${apiKey}`,
+                    "Content-Type": "application/json",
+                    },
+                }
+                );
+                const favListData = await response.json();
+                console.log(favListData);
+                const favListId = favListData.records.map((record) => ({
+                    ...record.fields,
+                    id: record.id,
+                  }));
+                  console.log(favListId)
+                setFavourites(favListData.records);
+                // console.log(favourites);
+        };
+        fetchFavs();
+    }, []);
 
    return (
     <>
@@ -64,9 +86,10 @@ useEffect()
             </tr>
             </thead>
             {/* <FavouriteListItem /> */}
-            {[favourites].map((item, index) => (<FavouriteListItem 
+            {/* {JSON.stringify(favourites)} */}
+            {favourites.map((item, index) => (<FavouriteListItem 
                 key={index} 
-                item={item.name}
+                item={item.fields.Name}
                 />))}
         </table>
     </div>
