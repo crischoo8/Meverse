@@ -7,7 +7,7 @@ export default function FavouriteListItem({item}) {
         <tr>
             <td className='tableData'> 
                 {/* yun ๑(◕‿◕)๑ */}
-            {item}
+            {item} ๑(◕‿◕)๑
             </td>
         </tr>
         </tbody>
