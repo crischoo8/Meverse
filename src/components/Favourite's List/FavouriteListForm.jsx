@@ -3,23 +3,25 @@ import { useState, useEffect } from "react";
 import '../../Component Styles/Card.css'
 
 export default function FavouriteListForm() {
-    const [searchedIdol, setSearchedIdol] = useState('');
+    // const [searchedIdol, setSearchedIdol] = useState([]);
+    const [userInput, setUserInput] = useState('');
     const [favourites, setFavourites] = useState([]);
+   
 
-//   put the preventDefault inside handleAdd (?)
-    //  const handleRefresh = function(event) {
-    //     event.preventDefault();
-    //  }
-
+  
      const handleChange = function(event) {
         // const {value} = event.target;
-        setSearchedIdol(event.target.value);
-        console.log(searchedIdol);
+        setUserInput(event.target.value);
+      
+        // console.log(searchedIdol);
+      
      }
 
      const handleAdd = function(event) {
         event.preventDefault();
-        setFavourites({...favourites, searchedIdol});
+        // const name = "me"
+        // const name = userInput;
+        setFavourites({...favourites, userInput});
         console.log(favourites);
      }
 
@@ -30,7 +32,9 @@ export default function FavouriteListForm() {
         
         <label className='label'>Add a New Bias!</label>
         <br/>
-        <input onChange={handleChange} ></input>
+        <input 
+        value={userInput}
+        onChange={handleChange} ></input>
         <button>i choose you!</button>
     </form>
         <table className="table">
@@ -39,7 +43,11 @@ export default function FavouriteListForm() {
                 <th>Favourite's List</th>
             </tr>
             </thead>
-            <FavouriteListItem />
+            {/* <FavouriteListItem /> */}
+            {[favourites].map((item, index) => (<FavouriteListItem 
+                key={index} 
+                item={item.userInput}
+                />))}
         </table>
     </div>
     </>

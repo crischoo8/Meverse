@@ -1,12 +1,13 @@
 import '../../Component Styles/Card.css'
 
-export default function FavouriteListItem() {
+export default function FavouriteListItem({item}) {
 
     return(
         <tbody>
         <tr>
             <td className='tableData'> 
-                yun ๑(◕‿◕)๑
+                {/* yun ๑(◕‿◕)๑ */}
+            {item}
             </td>
         </tr>
         </tbody>
