@@ -9,16 +9,6 @@ export default function FavouriteListItem() {
                 yun ๑(◕‿◕)๑
             </td>
         </tr>
-        <tr>
-            <td className='tableData'> 
-                pupu Ⴚტ◕‿◕ტჂ
-            </td>
-        </tr>
-        <tr>
-            <td className='tableData'> 
-                zuha (´• ω •`) ♡
-            </td>
-        </tr>
         </tbody>
     )
 };

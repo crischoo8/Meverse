@@ -3,29 +3,35 @@ import { useState, useEffect } from "react";
 import '../../Component Styles/Card.css'
 
 export default function FavouriteListForm() {
-    const [searchedIdol, setSearchedIdol] = useState([]);
+    const [searchedIdol, setSearchedIdol] = useState('');
     const [favourites, setFavourites] = useState([]);
 
-  
-     const handleRefresh = function(event) {
-        event.preventDefault();
-     }
+//   put the preventDefault inside handleAdd (?)
+    //  const handleRefresh = function(event) {
+    //     event.preventDefault();
+    //  }
 
      const handleChange = function(event) {
-        const {value} = event.target;
-        setSearchedIdol({value});
+        // const {value} = event.target;
+        setSearchedIdol(event.target.value);
         console.log(searchedIdol);
+     }
+
+     const handleAdd = function(event) {
+        event.preventDefault();
+        setFavourites({...favourites, searchedIdol});
+        console.log(favourites);
      }
 
    return (
     <>
     <div className="componentCard">
-    <form > 
+    <form onSubmit={handleAdd}> 
         
         <label className='label'>Add a New Bias!</label>
         <br/>
-        <input onChange={handleChange}></input>
-        <button onClick={handleRefresh}>i choose you!</button>
+        <input onChange={handleChange} ></input>
+        <button>i choose you!</button>
     </form>
         <table className="table">
             <thead>
