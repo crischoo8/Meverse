@@ -6,7 +6,7 @@ const apiKey =
   "pat55QOu3yd823Utv.546f225dd594b97ce83db9d5a98f5dc9473321bce84ccb071c557d572f297395";
 const baseId = "app1mVWq6wPqttmvG";
 const tableName = "FavList";
-
+// const tableItemId = item.id;
 export default function FavouriteListForm() {
     // const [searchedIdol, setSearchedIdol] = useState([]);
     const [name, setName] = useState('');
@@ -55,17 +55,28 @@ export default function FavouriteListForm() {
                 }
                 );
                 const favListData = await response.json();
-                console.log(favListData);
+                // console.log(favListData);
                 const favListId = favListData.records.map((record) => ({
                     ...record.fields,
                     id: record.id,
                   }));
-                  console.log(favListId)
+                //   console.log(favListId)
                 setFavourites(favListData.records);
-                // console.log(favourites);
+                // console.log(favListData.records[0].id);
         };
         fetchFavs();
     }, []);
+
+    // const deleteThisAirtableData = async function() {
+    //     const response = await fetch(`https://api.airtable.com/v0/${baseId}/${tableName}/${item.id}`, {
+    //       method: "DELETE",
+    //       headers: {
+    //         "Content-Type": "application/json",
+    //         Authorization: `Bearer ${apiKey}`,
+    //       },
+    //     });
+    //     await response.json();
+    //   };
 
    return (
     <>
@@ -90,9 +101,21 @@ export default function FavouriteListForm() {
             {favourites.map((item, index) => (<FavouriteListItem 
                 key={index} 
                 item={item.fields.Name}
-                />))}
+                button = {<button onClick={async () => {
+                    const response = await fetch(`https://api.airtable.com/v0/${baseId}/${tableName}/${item.id}`, {
+                method: "DELETE",
+                headers: {
+                    "Content-Type": "application/json",
+                    Authorization: `Bearer ${apiKey}`,
+                },
+                });
+                await response.json();
+                }}>x</button>}
+                />))} 
         </table>
     </div>
     </>
    )
 }
+
+// console.log(item.id)
