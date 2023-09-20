@@ -8,7 +8,7 @@ export default function JournalLogCard() {
         <tbody> 
        <tr>
             <td>
-                <strong>Log #1</strong>
+                <strong>Ⴚტ◕‿◕ტჂ</strong>
             </td>
        </tr>
        <tr>
@@ -18,7 +18,7 @@ export default function JournalLogCard() {
        </tr>
        <tr>
             <td>
-                "im so tired, i want a nap and a blanket sleeeep only"
+                im so tired, i want a nap and a blanket sleeeep only
             </td>
     </tr>
     </tbody>

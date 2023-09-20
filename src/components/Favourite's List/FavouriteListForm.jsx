@@ -18,7 +18,7 @@ export default function FavouriteListForm() {
      }
 
      const handleAdd = async function(event) {
-        console.log(name);
+        // console.log(name);
         event.preventDefault();
         
         const data = {
@@ -94,8 +94,6 @@ export default function FavouriteListForm() {
                 <th>Favourite's List</th>
             </tr>
             </thead>
-            {/* <FavouriteListItem /> */}
-            {/* {JSON.stringify(favourites)} */}
             {favourites.map((item, index) => (<FavouriteListItem 
                 key={index} 
                 item={item.fields.Name}

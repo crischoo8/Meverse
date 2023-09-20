@@ -36,3 +36,7 @@
 .title {
     text-decoration: underline;
 }
+
+.smallLabel {
+    margin: 10px;
+}
