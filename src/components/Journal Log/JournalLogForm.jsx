@@ -76,7 +76,7 @@ export default function JournalLogForm() {
         <form onSubmit={handleAdd}>
             
             <label className='label'>
-                fearnot's log
+                Journal Time!
             </label>
             
             <div className='smallLabel'>

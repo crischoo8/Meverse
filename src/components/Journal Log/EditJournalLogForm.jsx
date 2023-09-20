@@ -76,17 +76,17 @@ export default function EditJournalLogForm() {
         <form>
             
             <label className='label'>
-                fearnot's log
+                Update Log
             </label>
             
             <div className='smallLabel'>
-            <label>enter journal title here!</label>
+            <label><strong>CHANGE</strong> journal title here!</label>
             <br/>
             <input name='title' value={formData.title} onChange={handleChange}></input>
             </div>
             
             <div className='smallLabel'>
-            <label>jot your thoughts here!</label>
+            <label><strong>CHANGE</strong> your thoughts here!</label>
             <br/>
             <textarea name='text' value={formData.text} onChange={handleChange}></textarea>
             </div>

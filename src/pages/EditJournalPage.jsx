@@ -5,17 +5,24 @@ import { useNavigate } from "react-router-dom";
 export default function EditJournalPage() {
     const navigate = useNavigate();
 
-    const handleClick = function() {
+    const goHome = function() {
         navigate('/');
+    };
+
+    const goJournal = function() {
+        navigate('/Journal');
     };
 
     return(
         <>
         
-        <span onClick={handleClick}>
+        <span onClick={goHome}>
             back to home! ◥█̆̈◤࿉∥
         </span>
-        
+        <br />
+        <span onClick={goJournal}>
+            more journalling? ᕕ(︶‿︶)ᕗ
+        </span>
         
        
          <EditJournalLogForm />
