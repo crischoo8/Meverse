@@ -14,7 +14,6 @@ export default function FavouriteListForm() {
   
      const handleChange = function(event) {
         setName(event.target.value);
-      
      }
 
      const handleAdd = async function(event) {
@@ -23,7 +22,7 @@ export default function FavouriteListForm() {
         
         const data = {
         "fields": {
-            "Name": `${name}`
+            "Name": name
         }
             };
 
@@ -39,9 +38,10 @@ export default function FavouriteListForm() {
         }
         );
         await response.json();
+        fetchFavs();
     };
         
-    useEffect( () => {
+    
         const fetchFavs = async () => {
             const response = await fetch(
                 `https://api.airtable.com/v0/${baseId}/${tableName}`,
@@ -62,8 +62,9 @@ export default function FavouriteListForm() {
                 setFavourites(favListData.records);
                 // console.log(favListData.records[0].id);
         };
+        useEffect( () => {
         fetchFavs();
-    }, []);
+        }, []);
 
     // const deleteThisAirtableData = async function() {
     //     const response = await fetch(`https://api.airtable.com/v0/${baseId}/${tableName}/${item.id}`, {
@@ -106,6 +107,7 @@ export default function FavouriteListForm() {
                 },
                 });
                 await response.json();
+                fetchFavs();
                 }}>x</button>}
                 />))} 
         </table>

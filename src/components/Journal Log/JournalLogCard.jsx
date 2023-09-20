@@ -1,7 +1,7 @@
 import '../../Component Styles/Card.css'
 
 
-export default function JournalLogCard() {
+export default function JournalLogCard({title, text}) {
     return(
     <>
     <table className='card'>
@@ -13,12 +13,14 @@ export default function JournalLogCard() {
        </tr>
        <tr>
             <td className='title'>
-                <strong>title:</strong> why is CSS so hard
+                <strong>title:</strong> {title}
+                {/* why is CSS so hard */}
             </td>
        </tr>
        <tr>
             <td>
-                im so tired, i want a nap and a blanket sleeeep only
+                {text}
+                {/* im so tired, i want a nap and a blanket sleeeep only */}
             </td>
     </tr>
     </tbody>
