@@ -11,6 +11,7 @@ export default function EditJournalLogForm() {
     const initialData = {title: '', text: ''};
     const [formData, setFormData] = useState({...initialData});
     const [logData, setLogData] = useState([]);
+    const edited = false;
     
     const handleChange = function(event) {
         const {name, value} = event.target
@@ -18,7 +19,7 @@ export default function EditJournalLogForm() {
             ...formData,
             [name]: value,
         });
-        console.log(formData)
+        // console.log(formData)
     }
 
     // const handleEdit = async function(event) {
@@ -62,7 +63,7 @@ export default function EditJournalLogForm() {
             //     ...record.fields,
             //     id: record.id,
             //   }));
-              console.log(formData)
+            //   console.log(formData)
             setLogData(journalData.records);
             // console.log(favListData.records[0].id);
     };
@@ -101,6 +102,7 @@ export default function EditJournalLogForm() {
         title={entry.fields.title}
         text={entry.fields.text}
         button = {<button onClick={async () => {
+
             const data = {
                 "fields": {
                     "title": formData.title,
@@ -120,6 +122,7 @@ export default function EditJournalLogForm() {
                 }
                 );
                 await response.json();
+                fetchJournals();
         
         }}>edit</button>}
         />))}
