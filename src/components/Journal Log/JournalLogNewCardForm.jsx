@@ -1,6 +1,6 @@
 import '../../Component Styles/Card.css'
 
-export default function JournalLogCard() {
+export default function NewCardForm() {
 
     return(
         <>
