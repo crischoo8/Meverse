@@ -1,20 +1,18 @@
 import FavouriteListItem from "./FavouriteListItem"
 import { useState, useEffect } from "react";
 import '../../Component Styles/Card.css'
-// import addFav from "../../AirTable/addFav";
+
 const apiKey =
   "pat55QOu3yd823Utv.546f225dd594b97ce83db9d5a98f5dc9473321bce84ccb071c557d572f297395";
 const baseId = "app1mVWq6wPqttmvG";
 const tableName = "FavList";
-// const tableItemId = item.id;
+
 export default function FavouriteListForm() {
-    // const [searchedIdol, setSearchedIdol] = useState([]);
     const [name, setName] = useState('');
     const [favourites, setFavourites] = useState([]);
    
   
      const handleChange = function(event) {
-        // const {value} = event.target;
         setName(event.target.value);
       
      }

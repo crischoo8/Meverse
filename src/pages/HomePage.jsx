@@ -1,7 +1,8 @@
 import Socials from '../components/Social\'s Bar/socials'
 import FavouriteListForm from '../components/Favourite\'s List/FavouriteListForm'
 import MusicStatus from '../components/Music Status/MusicStatus'
-import JournalLog from '../components/Journal Log/JournalLog'
+import JournalLogPreview from '../components/Journal Log/JournalLogPreview'
+
 import './HomePage.css'
 export default function HomePage() {
     return (
@@ -16,7 +17,8 @@ export default function HomePage() {
         
 
         <div className='rightCheek'>
-        <JournalLog />
+        {/* <JournalLogCard /> */}
+        <JournalLogPreview />
         </div>
         </section>
         <footer>

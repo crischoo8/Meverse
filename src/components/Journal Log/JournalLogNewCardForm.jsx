@@ -1,6 +1,6 @@
 import '../../Component Styles/Card.css'
 
-export default function JournalLog() {
+export default function JournalLogCard() {
 
     return(
         <>
