@@ -7,8 +7,8 @@ export default function JournalLogCard({title, text, button}) {
     <table className='card'>
         <tbody> 
        <tr>
-            <td>
-                <strong>Ⴚტ◕‿◕ტჂ</strong>
+            <td className='labelv3'>
+                <p>Ⴚტ◕‿◕ტჂ</p>
             </td>
        </tr>
        <tr>
