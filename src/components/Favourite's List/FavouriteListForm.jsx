@@ -89,7 +89,7 @@ export default function FavouriteListForm() {
         onChange={handleChange} ></input>
         <button>i choose you!</button>
     </form>
-        <table className="table">
+        <table className="table" style={{backgroundColor: '#d1ebf6'}}>
             <thead>
             <tr>
                 <th>Favourite's List</th>
