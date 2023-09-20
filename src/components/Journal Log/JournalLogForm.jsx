@@ -43,6 +43,7 @@ export default function JournalLogForm() {
         }
         );
         await response.json();
+        fetchJournals();
     };
 
     const fetchJournals = async () => {
@@ -99,6 +100,17 @@ export default function JournalLogForm() {
         key={index}
         title={entry.fields.title}
         text={entry.fields.text}
+        button = {<button onClick={async () => {
+            const response = await fetch(`https://api.airtable.com/v0/${baseId}/${tableName}/${entry.id}`, {
+        method: "DELETE",
+        headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${apiKey}`,
+        },
+        });
+        await response.json();
+        fetchJournals();
+        }}>x</button>}
         />))}
         </>
     )
