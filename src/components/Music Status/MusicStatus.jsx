@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 export default function MusicStatus() {
     const [music, setMusic] = useState({});
     let gotMusic = false;
-    const status = 'nothing';
+    const status = 'nothing here yet ٭(•﹏•)٭';
     // const handleRefresh = function(event) {
     //     event.preventDefault();
     //  }

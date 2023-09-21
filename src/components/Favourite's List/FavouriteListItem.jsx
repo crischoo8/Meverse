@@ -8,7 +8,7 @@ export default function FavouriteListItem({item, button, profileButton}) {
         <>
         <tbody>
         <tr>
-            <td className='tableData'> 
+            <td className='tableData' style={{backgroundColor: '#FFF8F1'}}> 
                 {/* yun ๑(◕‿◕)๑ */}
                 ♡  {item} 
                 <br/>

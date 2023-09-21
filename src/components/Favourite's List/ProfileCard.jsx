@@ -5,10 +5,10 @@ export default function ProfileCard({StageName, FullName, DOB, Group, Former}) {
     return(
     <>
     
-        <tbody> 
+       <tbody className='profileCard'>
        <tr>
-            <td className='labelv3'>
-                <p>♫꒰･‿･๑꒱</p>
+            <td className='labelv4'>
+                ♫꒰･‿･๑꒱
             </td>
        </tr>
        <tr>
@@ -36,9 +36,9 @@ export default function ProfileCard({StageName, FullName, DOB, Group, Former}) {
                 <strong>Former Group:</strong> {Former}
             </td>
        </tr>
-       
+       </tbody>
         
-    </tbody>
+   
     
     </>
     )

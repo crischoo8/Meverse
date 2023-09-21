@@ -12,7 +12,7 @@ export default function FavouriteListForm() {
     const [name, setName] = useState('');
     const [favourites, setFavourites] = useState([]);
     const [profiles, setProfiles] = useState({});
-    const reply = 'nothing';
+    const reply = 'no profiles checked rn!';
   
      const handleChange = function(event) {
         setName(event.target.value);
@@ -93,12 +93,13 @@ export default function FavouriteListForm() {
         onChange={handleChange} ></input>
         <button>i choose you!</button>
     </form>
-        <table className="table" style={{backgroundColor: '#d1ebf6'}}>
+        <table className="table" style={{backgroundColor: ' #B1BDD5'}}>
             <thead>
             <tr>
                 <th>Favourite's List</th>
             </tr>
             </thead>
+        
             {favourites.map((item, index) => (<FavouriteListItem 
                 key={index} 
                 item={item.fields.Name}
@@ -133,7 +134,13 @@ export default function FavouriteListForm() {
                 
                 {/* {JSON.stringify((Object.keys(profiles).length === 0)? reply : profiles.data[0]?.["Former Group"])} */}
                 {/* {JSON.stringify(typeof mappedArray)} */}
-                {(Object.keys(profiles).length === 0)? reply : profiles.data.map((profile, index) => (<ProfileCard 
+                {(Object.keys(profiles).length === 0)? (
+                    <tbody>
+                    <tr>
+                    <td colSpan="5">{reply}</td>
+                    </tr>
+                    </tbody>
+          ): profiles.data.map((profile, index) => (<ProfileCard 
                 key = {index}
                 StageName = {(Object.keys(profiles).length === 0)? reply : profile?.["Stage Name"]}
                 FullName = {(Object.keys(profiles).length === 0)? reply : profile?.["Full Name"]}
@@ -141,6 +148,8 @@ export default function FavouriteListForm() {
                 Group = {(Object.keys(profiles).length === 0)? reply : profile?.Group}
                 Former = {(Object.keys(profiles).length === 0)? reply : profile?.["Former Group"]}
                 />))} 
+            
+                
         </table>
     </div>
     </>

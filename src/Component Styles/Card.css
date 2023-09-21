@@ -18,6 +18,17 @@
     font-size: 25px;
     font-weight: bold;
 }
+.labelv4 {
+    padding-top: 0px;
+    font-size: 25px;
+    font-weight: bold;
+    background-color: #B1BDD5;
+    color: snow
+}
+
+.profileCard {
+    background-color: #FFF8F1;
+}
 
 .musictable {
     margin: 0 auto; 
@@ -28,7 +39,7 @@
     border-radius: 3%;
     width: 300px;
     height: 200px; 
-    background-color: 	#fefbba ;
+    background-color: 	#FFFDD5
 }
 
 .table {
