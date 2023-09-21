@@ -3,9 +3,12 @@ import { useState, useEffect } from 'react';
 
 export default function MusicStatus() {
     const [music, setMusic] = useState({});
-    const handleRefresh = function(event) {
-        event.preventDefault();
-     }
+    let gotMusic = false;
+    const status = 'nothing';
+    // const handleRefresh = function(event) {
+    //     event.preventDefault();
+    //  }
+
     const addMusic = async function(event) {
         event.preventDefault();
         const url = 'https://k-pop.p.rapidapi.com/songs/random';
@@ -22,8 +25,8 @@ export default function MusicStatus() {
         const result = await response.json();
         console.log(result);
         setMusic(result);
-    
-        console.log(music);
+        gotMusic = true;
+        console.log(gotMusic);
     }
     return(
         <>
@@ -34,19 +37,20 @@ export default function MusicStatus() {
             <tbody>
             <tr>
                 <td>
-                {/* <strong>SONG:</strong> {music.data[0].['Song Name']} */}
-                {JSON.stringify(music.data)}
+                <strong>SONG:</strong> {(Object.keys(music).length === 0)? status :  music.data[0]?.["Song Name"]}
+                {/* {JSON.stringify(music.data?.[0])} */}
+                {/* {JSON.stringify(Object.keys(music).length === 0)} */}
                 </td>
             </tr>
 
             <tr>
                 <td>
-                {/* <strong>ARTIST:</strong> {music.data[0]?.Artist} */}
+                <strong>ARTIST:</strong> {(Object.keys(music).length === 0)? status : music.data[0]?.Artist}
                 </td>
             </tr>
             <tr>
                 <td>
-                {/* <strong>LINK:</strong> <a href={music.data[0]?.Video} target="_blank">listen here</a> */}
+                <strong>LINK:</strong> <a href={(Object.keys(music).length === 0)? status : music.data[0]?.Video} target="_blank">listen here</a>
                 </td>
             </tr>
             </tbody>
