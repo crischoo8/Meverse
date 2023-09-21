@@ -102,16 +102,23 @@ export default function EditJournalLogForm() {
         title={entry.fields.title}
         text={entry.fields.text}
         button = {<button onClick={async () => {
-
+            // const update = {...entry.fields, title: formData.title, text: formData.text };
+            // console.log(update)
+            console.log(formData)
+            console.log(entry.fields)
             const data = {
+               "records": [ 
+                {
+                "id": entry.id, 
                 "fields": {
                     "title": formData.title,
                     "text": formData.text
                 }
+                }]
                     };
         
                 const response = await fetch(
-                `https://api.airtable.com/v0/${baseId}/${tableName}/${entry.id}`,
+                `https://api.airtable.com/v0/${baseId}/${tableName}`,
                 {
                     method: "PATCH",
                     headers: {
