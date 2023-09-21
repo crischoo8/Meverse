@@ -1,6 +1,7 @@
 import '../../Component Styles/Card.css'
 import JournalLogCard from './JournalLogCard';
 import { useState, useEffect } from 'react';
+import EditCard from '../Edit Page (WIP)/EditCard';
 
 const apiKey =
   "pat55QOu3yd823Utv.546f225dd594b97ce83db9d5a98f5dc9473321bce84ccb071c557d572f297395";
@@ -97,7 +98,7 @@ export default function JournalLogForm() {
             
         </form>
         </div>
-
+        
         {logData.map((entry, index)=> (<JournalLogCard
         key={index}
         title={entry.fields.title}
