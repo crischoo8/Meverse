@@ -3,7 +3,8 @@ body {
 }
 
 /* .title {
-    text-align: center;
+   
+    padding-top: 1rem;
 } */
 
 .container {
@@ -14,6 +15,7 @@ body {
 .rightCheek {
     flex: 1;
     padding: 1rem;
+    
 }
 
 .leftCheek {

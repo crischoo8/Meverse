@@ -20,6 +20,7 @@ export default function JournalLogForm() {
         });
     }
 
+  
     const handleAdd = async function(event) {
         // console.log(name);
         event.preventDefault();
@@ -43,6 +44,7 @@ export default function JournalLogForm() {
         }
         );
         await response.json();
+        setFormData({title: '', text: ''})
         fetchJournals();
     };
 

@@ -8,6 +8,8 @@ import './HomePage.css'
 export default function HomePage() {
     return (
         <>
+        <br/>
+        <br/>
         <h1 className="title">welcome home (づ ◕‿◕ )づ</h1>
         <br />
         <section className='container'>

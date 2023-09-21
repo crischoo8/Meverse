@@ -14,7 +14,7 @@ export default function JournalLogPreview() {
         <>
         <div className='componentCard'>
             <h1 className='label'>
-            fearnot's log
+            journal log ♡ 
             </h1>
             <br/>
             <div className='dummyCard'>

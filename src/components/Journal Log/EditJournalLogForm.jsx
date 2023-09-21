@@ -11,7 +11,7 @@ export default function EditJournalLogForm() {
     const initialData = {title: '', text: ''};
     const [formData, setFormData] = useState({...initialData});
     const [logData, setLogData] = useState([]);
-    const edited = false;
+   
     
     const handleChange = function(event) {
         const {name, value} = event.target
@@ -22,6 +22,7 @@ export default function EditJournalLogForm() {
         // console.log(formData)
     }
 
+    
     // const handleEdit = async function(event) {
     //     // console.log(name);
     //     event.preventDefault();
@@ -66,6 +67,7 @@ export default function EditJournalLogForm() {
             //   console.log(formData)
             setLogData(journalData.records);
             // console.log(favListData.records[0].id);
+            
     };
     useEffect( () => {
     fetchJournals();
@@ -77,17 +79,17 @@ export default function EditJournalLogForm() {
         <form>
             
             <label className='label'>
-                Update Log
+                Edit Here
             </label>
             
             <div className='smallLabel'>
-            <label><strong>CHANGE</strong> journal title here!</label>
+            <label><strong>paste & edit</strong> journal title here!</label>
             <br/>
             <input name='title' value={formData.title} onChange={handleChange}></input>
             </div>
             
             <div className='smallLabel'>
-            <label><strong>CHANGE</strong> your thoughts here!</label>
+            <label><strong>paste & edit</strong> your thoughts here!</label>
             <br/>
             <textarea name='text' value={formData.text} onChange={handleChange}></textarea>
             </div>
@@ -129,6 +131,7 @@ export default function EditJournalLogForm() {
                 }
                 );
                 await response.json();
+                setFormData({title: '', text: ''})
                 fetchJournals();
         
         }}>edit</button>}
