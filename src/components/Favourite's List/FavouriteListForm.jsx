@@ -40,6 +40,7 @@ export default function FavouriteListForm() {
         }
         );
         await response.json();
+        setName('')
         fetchFavs();
     };
         

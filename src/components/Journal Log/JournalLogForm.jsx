@@ -112,6 +112,7 @@ export default function JournalLogForm() {
         },
         });
         await response.json();
+        setFormData({title: '', text: ''})
         fetchJournals();
         }}>x</button>}
         />))}
