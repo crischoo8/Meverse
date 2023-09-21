@@ -14,13 +14,14 @@ export default function HomePage() {
         <br />
         <section className='container'>
         <div className='leftCheek'>
+        <JournalLogPreview />
         <MusicStatus />
-        <FavouriteListForm />
+        
         </div>
         
 
         <div className='rightCheek'>
-        <JournalLogPreview />
+        <FavouriteListForm />
         </div>
         </section>
         <footer>

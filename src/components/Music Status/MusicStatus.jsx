@@ -25,8 +25,6 @@ export default function MusicStatus() {
         const result = await response.json();
         console.log(result);
         setMusic(result);
-        gotMusic = true;
-        console.log(gotMusic);
     }
     return(
         <>

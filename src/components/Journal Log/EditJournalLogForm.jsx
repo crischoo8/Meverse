@@ -104,10 +104,7 @@ export default function EditJournalLogForm() {
         title={entry.fields.title}
         text={entry.fields.text}
         button = {<button onClick={async () => {
-            // const update = {...entry.fields, title: formData.title, text: formData.text };
-            // console.log(update)
-            console.log(formData)
-            console.log(entry.fields)
+           
             const data = {
                "records": [ 
                 {

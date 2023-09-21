@@ -1,6 +1,6 @@
 import '../../Component Styles/Card.css'
 
-export default function FavouriteListItem({item, button}) {
+export default function FavouriteListItem({item, button, profileButton}) {
     const handleClick = function(event) {
         console.log(event.target);
     }
@@ -12,7 +12,7 @@ export default function FavouriteListItem({item, button}) {
                 {/* yun ๑(◕‿◕)๑ */}
                 ♡  {item} 
                 <br/>
-                {button}
+                {button} {profileButton}
             </td>
             
         </tr>
