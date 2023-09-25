@@ -12,7 +12,7 @@ export default function JournalLogForm() {
     const initialData = {title: '', text: ''};
     const [formData, setFormData] = useState({...initialData});
     const [logData, setLogData] = useState([]);
-    
+
     const handleChange = function(event) {
         const {name, value} = event.target
         setFormData({
@@ -73,6 +73,9 @@ export default function JournalLogForm() {
     fetchJournals();
     }, []);
 
+    const refresh = function() {
+        fetchJournals();
+    };
     return(
         <>
         <div className='componentCard'>
@@ -101,20 +104,22 @@ export default function JournalLogForm() {
         
         {logData.map((entry, index)=> (<JournalLogCard
         key={index}
+        entry={entry}
         title={entry.fields.title}
         text={entry.fields.text}
-        button = {<button onClick={async () => {
-            const response = await fetch(`https://api.airtable.com/v0/${baseId}/${tableName}/${entry.id}`, {
-        method: "DELETE",
-        headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${apiKey}`,
-        },
-        });
-        await response.json();
-        setFormData({title: '', text: ''})
-        fetchJournals();
-        }}>x</button>}
+        refresh={refresh}
+        // button = {<button onClick={async () => {
+        //     const response = await fetch(`https://api.airtable.com/v0/${baseId}/${tableName}/${entry.id}`, {
+        // method: "DELETE",
+        // headers: {
+        //     "Content-Type": "application/json",
+        //     Authorization: `Bearer ${apiKey}`,
+        // },
+        // });
+        // await response.json();
+        // setFormData({title: '', text: ''})
+        // fetchJournals();
+        // }}>x</button>}
         />))}
         </>
     )
