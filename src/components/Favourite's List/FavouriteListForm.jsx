@@ -17,6 +17,10 @@ export default function FavouriteListForm() {
      const handleChange = function(event) {
         setName(event.target.value);
      }
+     
+     const profilesToLoad = function(retrievedProfile) {
+        setProfiles(retrievedProfile);
+     };
 
      const handleAdd = async function(event) {
         // console.log(name);
@@ -69,19 +73,9 @@ export default function FavouriteListForm() {
         fetchFavs();
         }, []);
 
-       
-
-    // const deleteThisAirtableData = async function() {
-    //     const response = await fetch(`https://api.airtable.com/v0/${baseId}/${tableName}/${item.id}`, {
-    //       method: "DELETE",
-    //       headers: {
-    //         "Content-Type": "application/json",
-    //         Authorization: `Bearer ${apiKey}`,
-    //       },
-    //     });
-    //     await response.json();
-    //   };
-
+       const refresh = function() {
+        fetchFavs();
+       }
    return (
     <>
     <div className="componentCard">
@@ -103,34 +97,26 @@ export default function FavouriteListForm() {
         
             {favourites.map((item, index) => (<FavouriteListItem 
                 key={index} 
-                item={item.fields.Name}
-                button = {<button onClick={async () => {
-                    const response = await fetch(`https://api.airtable.com/v0/${baseId}/${tableName}/${item.id}`, {
-                method: "DELETE",
-                headers: {
-                    "Content-Type": "application/json",
-                    Authorization: `Bearer ${apiKey}`,
-                },
-                });
-                await response.json();
-                fetchFavs();
-                }}>x</button>}
-                profileButton = {<button onClick={async () => {
-                    const url = `https://k-pop.p.rapidapi.com/idols?q=${item.fields.Name}&by=Stage%20Name`;
-                const options = {
-                    method: 'GET',
-                    headers: {
-                        'X-RapidAPI-Key': '3a9180ad1fmsh49e80cc673aa29dp12e99djsn155fb5eeaa1f',
-                        'X-RapidAPI-Host': 'k-pop.p.rapidapi.com'
-                    }
-                };
+                item={item}
+                itemName={item.fields.Name}
+                refresh={refresh}
+                loadProfile={profilesToLoad}
+                // profileButton = {<button onClick={async () => {
+                //     const url = `https://k-pop.p.rapidapi.com/idols?q=${item.fields.Name}&by=Stage%20Name`;
+                // const options = {
+                //     method: 'GET',
+                //     headers: {
+                //         'X-RapidAPI-Key': '3a9180ad1fmsh49e80cc673aa29dp12e99djsn155fb5eeaa1f',
+                //         'X-RapidAPI-Host': 'k-pop.p.rapidapi.com'
+                //     }
+                // };
 
-                    const response = await fetch(url, options);
-                    const result = await response.json();
-                    console.log(result);
-                    setProfiles(result)
+                //     const response = await fetch(url, options);
+                //     const result = await response.json();
+                //     console.log(result);
+                //     setProfiles(result)
                 
-                }}>check out profiles!</button>}
+                // }}>check out profiles!</button>}
                 />))} 
                 
                 {/* {JSON.stringify((Object.keys(profiles).length === 0)? reply : profiles.data[0]?.["Former Group"])} */}
