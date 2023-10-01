@@ -9,9 +9,9 @@ export default function JournalPage() {
     const goHome = function() {
         navigate('/');
     };
-    const goEdit = function() {
-        navigate('/EditJournal');
-    };
+    // const goEdit = function() {
+    //     navigate('/EditJournal');
+    // };
 
     return(
         <>
@@ -20,9 +20,9 @@ export default function JournalPage() {
             back to home! ◥█̆̈◤࿉∥
         </span>
         <br/>
-        <span onClick={goEdit}>
+        {/* <span onClick={goEdit}>
             wanna fix something? ᕙ(⇀‸↼‶)ᕗ
-        </span>
+        </span> */}
         
          {/* <JournalLogCard /> */}
          <JournalLogForm />

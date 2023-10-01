@@ -1,5 +1,6 @@
 import '../../Component Styles/Card.css'
 import JournalLogCard from './JournalLogCard';
+import EditJournalCard from './EditJournalCard';
 import { useState, useEffect } from 'react';
 
 const apiKey =
@@ -73,6 +74,9 @@ export default function EditJournalLogForm() {
     fetchJournals();
     }, []);
 
+    const refresh = function() {
+        fetchJournals();
+    };
     return(
         <>
         <div className='componentCard'>
@@ -99,39 +103,15 @@ export default function EditJournalLogForm() {
         </form>
         </div>
 
-        {logData.map((entry, index)=> (<JournalLogCard
+        {logData.map((entry, index)=> (<EditJournalCard
         key={index}
         title={entry.fields.title}
         text={entry.fields.text}
-        button = {<button onClick={async () => {
-           
-            const data = {
-               "records": [ 
-                {
-                "id": entry.id, 
-                "fields": {
-                    "title": formData.title,
-                    "text": formData.text
-                }
-                }]
-                    };
-        
-                const response = await fetch(
-                `https://api.airtable.com/v0/${baseId}/${tableName}`,
-                {
-                    method: "PATCH",
-                    headers: {
-                    Authorization: `Bearer ${apiKey}`,
-                    "Content-Type": "application/json",
-                    },
-                    body: JSON.stringify(data),
-                }
-                );
-                await response.json();
-                setFormData({title: '', text: ''})
-                fetchJournals();
-        
-        }}>edit</button>}
+        entry={entry}
+        refresh={refresh}
+        formData={formData}
+        setFormData={setFormData}
+
         />))}
         </>
     )
