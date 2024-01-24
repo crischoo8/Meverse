@@ -2,6 +2,7 @@ import '../../Component Styles/Card.css'
 import JournalLogCard from './JournalLogCard';
 import EditJournalCard from './EditJournalCard';
 import { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 
 const apiKey =
   "pat55QOu3yd823Utv.546f225dd594b97ce83db9d5a98f5dc9473321bce84ccb071c557d572f297395";
@@ -13,6 +14,7 @@ export default function EditJournalLogForm() {
     const [formData, setFormData] = useState({...initialData});
     const [logData, setLogData] = useState([]);
    
+    const {id} = useParams();
     
     const handleChange = function(event) {
         const {name, value} = event.target
@@ -103,7 +105,7 @@ export default function EditJournalLogForm() {
         </form>
         </div>
 
-        {logData.map((entry, index)=> (<EditJournalCard
+        {/* {logData.map((entry, index)=> (<EditJournalCard
         key={index}
         title={entry.fields.title}
         text={entry.fields.text}
@@ -112,7 +114,8 @@ export default function EditJournalLogForm() {
         formData={formData}
         setFormData={setFormData}
 
-        />))}
+        />))} */}
+        <EditJournalCard />
         </>
     )
 };

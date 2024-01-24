@@ -21,7 +21,7 @@ export default function JournalLogCard({title, text, entry, refresh}) {
     }
     const navigate = useNavigate();
     const goEdit = function() {
-        navigate('/EditJournal');
+        navigate(`/EditJournal/${entry.id}`);
     };
     
     return(

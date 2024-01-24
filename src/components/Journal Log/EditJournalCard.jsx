@@ -3,7 +3,10 @@ const apiKey =
 const baseId = "app1mVWq6wPqttmvG";
 const tableName = "JournalLogs";
 
+
 export default function EditJournalCard({title, text, entry, refresh, formData, setFormData}) {
+ 
+   
     const handleEdit = async function() {
         const data = {
             "records": [ 
