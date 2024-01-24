@@ -2,7 +2,7 @@ import Socials from '../components/Social\'s Bar/socials'
 import FavouriteListForm from '../components/Favourite\'s List/FavouriteListForm'
 import MusicStatus from '../components/Music Status/MusicStatus'
 import JournalLogPreview from '../components/Journal Log/JournalLogPreview'
-
+import VDayPreview from '../components/Valentines/vDay'
 
 import './HomePage.css'
 export default function HomePage() {
@@ -22,6 +22,7 @@ export default function HomePage() {
 
         <div className='rightCheek'>
         <FavouriteListForm />
+        <VDayPreview />
         </div>
         </section>
         <footer>
